@@ -48,6 +48,7 @@
 (when (version< emacs-version "24.4")
   (error "Prelude requires at least GNU Emacs 24.4, but you're running %s" emacs-version))
 
+
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
@@ -138,5 +139,8 @@ by Prelude.")
 (prelude-eval-after-init
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
+
+(setq prelude-guru nil)
+
 
 ;;; init.el ends here

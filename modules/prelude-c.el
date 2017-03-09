@@ -35,8 +35,8 @@
 (require 'prelude-programming)
 
 (defun prelude-c-mode-common-defaults ()
-  (setq c-default-style "k&r"
-        c-basic-offset 4)
+  (setq c-default-style "linux"
+        c-basic-offset 8)
   (c-set-offset 'substatement-open 0))
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
