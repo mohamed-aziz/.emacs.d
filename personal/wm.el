@@ -1,5 +1,7 @@
 (require 'exwm)
 (require 'exwm-config)
+(require 'volume)
+
 (exwm-config-default)
 
 (exwm-input-set-key (kbd "M-r") 'exwm-reset)
@@ -25,3 +27,13 @@
 
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
+
+;; duh I have to implement the volume change function for my arch;
+;; using amixer maybe
+(exwm-input-set-key (kbd "<XF86AudioLowerVolume>") (lambda ()
+                                                     (interactive)
+                                                     (volume-lower)))
+
+(exwm-input-set-key (kbd "<XF86AudioRaiseVolume>") (lambda ()
+                                                     (interactive)
+                                                     (volume-raise)))
