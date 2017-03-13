@@ -132,7 +132,10 @@ that can occur between two notifications.  The default is
     (with-current-buffer buffer
       (erc-quit-server "Asta la vista"))))
 
-(setq erc-autojoin-channels-alist '(("freenode.net" "#prelude-emacs" "#projectile")))
+(setq erc-autojoin-channels-alist '(("freenode.net" "#python"
+                                     "#python-eve"
+                                     "#pocoo"
+                                     "#django")))
 
 (provide 'prelude-erc)
 
