@@ -4,11 +4,12 @@
 
 (setq frame-resize-pixelwise t)
 
-
+;; setting dictionary to english
 (setq ispell-dictionary "en")
 
 (add-to-list 'load-path
              "~/.emacs.d/plugins/yasnippet")
+
 (require 'yasnippet)
 (yas-global-mode 1)
 
@@ -37,12 +38,12 @@
 (setenv "WORKON_HOME" "/home/mohamed/vEnvs")
 (setenv "PROJECT_HOME" "/home/mohamed/Projects")
 
-;; (switch-to-buffer (get-buffer-create "*Welcome*"))
-;; (erase-buffer)
-;; (sit-for 0)
-;; (animate-string "Welcome to Emacs, master Mohamed..."
-;; 		(/ (window-height) 2) (- (/ (window-width) 2) 12))
-;; (sit-for (* 5 (/ (abs (random)) (float most-positive-fixnum))))
+(switch-to-buffer (get-buffer-create "*Welcome*"))
+(erase-buffer)
+(sit-for 0)
+(animate-string "Welcome to Emacs, master Mohamed..."
+		(/ (window-height) 2) (- (/ (window-width) 2) 12))
+(sit-for (* 5 (/ (abs (random)) (float most-positive-fixnum))))
 
 ;; term mode set unicode.
 (add-hook 'term-exec-hook
@@ -50,6 +51,7 @@
            (lambda ()
              (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
 
+;; from bastov blog.
 (defun sudo-edit (&optional arg)
   "Edit currently visited file as root.
 With a prefix ARG prompt for a file to visit.
@@ -62,3 +64,17 @@ buffer is not visiting a file."
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 (global-set-key (kbd "C-x C-r") 'sudo-edit)
+
+
+;; Windmove for org-mode.
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
+
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (push '("def" . ?ƒ) prettify-symbols-alist)))
+
+(global-prettify-symbols-mode 1)
