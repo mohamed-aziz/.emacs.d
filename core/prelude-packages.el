@@ -67,6 +67,7 @@
     editorconfig
     epl
     expand-region
+    exwm
     flycheck
     gist
     git-timemachine
@@ -75,6 +76,8 @@
     god-mode
     grizzl
     guru-mode
+    emms
+    flycheck-elm
     imenu-anywhere
     ov
     projectile
@@ -87,6 +90,8 @@
     undo-tree
     volatile-highlights
     which-key
+    volume
+    yasnippet
     zenburn-theme
     zop-to-char)
   "A list of packages to ensure are installed at launch.")
