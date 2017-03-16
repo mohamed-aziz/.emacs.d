@@ -1,4 +1,4 @@
-(setq prelude-theme 'gruvbox)
+(setq prelude-theme 'solarized-dark)
 
 ;; (setq prelude-theme nil)
 
