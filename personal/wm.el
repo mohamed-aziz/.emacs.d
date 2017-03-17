@@ -28,8 +28,7 @@
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
 
-;; duh I have to implement the volume change function for my arch;
-;; using amixer maybe
+;; change volume using volume.el
 (exwm-input-set-key (kbd "<XF86AudioLowerVolume>") (lambda ()
                                                      (interactive)
                                                      (volume-lower)))
@@ -37,3 +36,19 @@
 (exwm-input-set-key (kbd "<XF86AudioRaiseVolume>") (lambda ()
                                                      (interactive)
                                                      (volume-raise)))
+
+;; change brightness using the xbacklight program
+(defun xbacklight (percentage)
+  (interactive)
+  (progn
+      (shell-command (concat "xbacklight " percentage))
+      (message (concat "Brightness is: "
+                       (replace-regexp-in-string "\n" "" (shell-command-to-string "xbacklight"))))))
+
+(exwm-input-set-key (kbd "<XF86MonBrightnessUp>") (lambda ()
+                                                     (interactive)
+                                                     (xbacklight "+5")))
+
+(exwm-input-set-key (kbd "<XF86MonBrightnessDown>") (lambda ()
+                                                    (interactive)
+                                                    (xbacklight "-5")))
