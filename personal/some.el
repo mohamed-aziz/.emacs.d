@@ -1,6 +1,4 @@
-(setq prelude-theme 'solarized-dark)
-
-;; (setq prelude-theme nil)
+;; (disable-theme 'zenburn)
 
 (setq frame-resize-pixelwise t)
 
@@ -18,8 +16,8 @@
 
 
 ;; Load path
-(setenv "PATH" (concat (getenv "PATH") ":/home/mohamed/.local/bin/"))
-(setq exec-path (append exec-path '("/home/mohamed/.local/bin/")))
+(setenv "PATH" (concat (getenv "PATH") ":/home/mo/.local/bin/"))
+(setq exec-path (append exec-path '("/home/mo/.local/bin/")))
 
 
 (eval-after-load 'flycheck
@@ -35,8 +33,8 @@
 
 (scroll-bar-mode 0)
 
-(setenv "WORKON_HOME" "/home/mohamed/vEnvs")
-(setenv "PROJECT_HOME" "/home/mohamed/Projects")
+(setenv "WORKON_HOME" "/home/mo/vEnvs")
+(setenv "PROJECT_HOME" "/home/mo/Projects")
 
 (switch-to-buffer (get-buffer-create "*Welcome*"))
 (erase-buffer)
@@ -78,3 +76,6 @@ buffer is not visiting a file."
             (push '("def" . ?ƒ) prettify-symbols-alist)))
 
 (global-prettify-symbols-mode 1)
+
+
+(pdf-tools-install)
