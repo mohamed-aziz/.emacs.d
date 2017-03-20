@@ -130,11 +130,13 @@ that can occur between two notifications.  The default is
   (dolist (buffer (filter-server-buffers))
     (message "Server buffer: %s" (buffer-name buffer))
     (with-current-buffer buffer
-      (erc-quit-server "Asta la vista"))))
+      (erc-quit-server "Au revoir."))))
 
 (setq erc-autojoin-channels-alist '(("freenode.net" "#python"
                                      "#python-eve"
                                      "#pocoo"
+                                     "#emacs"
+                                     "#gnu"
                                      "#django")))
 
 (provide 'prelude-erc)
