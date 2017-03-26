@@ -1,4 +1,4 @@
 ;; dark
-;; (setq prelude-theme 'paganini)
+(setq prelude-theme 'yoshi)
 ;; light
-(setq prelude-theme 'plan9)
+;; (setq prelude-theme 'plan9)
