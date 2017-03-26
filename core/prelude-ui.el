@@ -63,10 +63,18 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(setq my-hostname
+      (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" ;; like perl chomp()
+                                (with-output-to-string
+                                  (call-process "/bin/hostname" nil standard-output nil))))
+
+(setq my-username
+      (getenv "USER"))
+
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
-      '("" invocation-name " Prelude - " (:eval (if (buffer-file-name)
+      '("" my-username "@" my-hostname (:eval (if (buffer-file-name)
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
 
