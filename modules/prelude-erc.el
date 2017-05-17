@@ -137,7 +137,8 @@ that can occur between two notifications.  The default is
                                      "#pocoo"
                                      "#emacs"
                                      "#gnu"
-                                     "#django")))
+                                     "#django"
+                                     "##programming")))
 
 (provide 'prelude-erc)
 

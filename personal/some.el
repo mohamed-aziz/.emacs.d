@@ -79,3 +79,16 @@ buffer is not visiting a file."
 
 
 (pdf-tools-install)
+
+
+(el-get-bundle vue-mode
+               :url "https://github.com/mohamed-aziz/vue-mode.git")
+(require 'vue-mode)
+
+
+;; (require 'powerline)
+
+;; (powerline-nano-theme)
+
+
+(define-key dired-mode-map "b" 'emms-play-dired)

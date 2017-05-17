@@ -54,6 +54,8 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
+
+(smartparens-mode 0)
 (provide 'prelude-c)
 
 ;;; prelude-c.el ends here

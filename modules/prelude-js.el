@@ -53,6 +53,8 @@
 
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
 
+(setq js-indent-level 2)
+
 (provide 'prelude-js)
 
 ;;; prelude-js.el ends here
