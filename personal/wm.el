@@ -21,7 +21,7 @@
 (define-emms-simple-player mplayer '(file url)
   (regexp-opt '(".ogg" ".mp3" ".wav" ".mpg" ".mpeg" ".wmv" ".wma" ".webm"
                 ".mov" ".avi" ".divx" ".ogm" ".asf" ".mkv" "http://" "mms://"
-                ".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a" ".flv" ".ogv" ".pls"))
+                ".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a" ".flv" ".ogv" ".pls" ".opus"))
   "mplayer" "-slave" "-quiet" "-really-quiet" "-fullscreen")
 
 
@@ -68,3 +68,14 @@
 
 (add-hook 'exwm-exit-hook (lambda ()
                             (shell-command "killall xfce4-session")))
+
+;; multi monitor stuff
+(require 'exwm-randr)
+(setq exwm-randr-workspace-output-plist '(0 "DP1"))
+(add-hook 'exwm-randr-screen-change-hook
+          (lambda ()
+            (start-process-shell-command
+             "xrandr" nil "xrandr --output DP1 --left-of eDP1 --auto")))
+(exwm-randr-enable)
+
+(exwm-randr--init)
