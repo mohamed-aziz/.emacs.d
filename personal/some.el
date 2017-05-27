@@ -63,13 +63,11 @@ buffer is not visiting a file."
 
 (global-set-key (kbd "C-x C-r") 'sudo-edit)
 
-
 ;; Windmove for org-mode.
 (add-hook 'org-shiftup-final-hook 'windmove-up)
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
-
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -77,18 +75,15 @@ buffer is not visiting a file."
 
 (global-prettify-symbols-mode 1)
 
-
 (pdf-tools-install)
-
 
 (el-get-bundle vue-mode
                :url "https://github.com/mohamed-aziz/vue-mode.git")
 (require 'vue-mode)
 
 
-;; (require 'powerline)
-
-;; (powerline-nano-theme)
-
-
 (define-key dired-mode-map "b" 'emms-play-dired)
+
+(global-set-key (kbd "<f5>") 'neotree-toggle)
+
+(darktooth-modeline)

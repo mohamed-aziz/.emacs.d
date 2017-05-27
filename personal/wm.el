@@ -69,6 +69,7 @@
 (add-hook 'exwm-exit-hook (lambda ()
                             (shell-command "killall xfce4-session")))
 
+
 ;; multi monitor stuff
 (require 'exwm-randr)
 (setq exwm-randr-workspace-output-plist '(0 "DP1"))
@@ -78,4 +79,7 @@
              "xrandr" nil "xrandr --output DP1 --left-of eDP1 --auto")))
 (exwm-randr-enable)
 
-(exwm-randr--init)
+(global-set-key (kbd "<f6>")
+                (lambda ()
+                  (interactive)
+                  (call-process-shell-command "rofi -show run&" nil 0)))
