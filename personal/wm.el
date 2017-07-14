@@ -58,9 +58,6 @@
                                                     (xbacklight "-5")))
 
 
-(emms-play-file "~/moognu.mp4")
-
-
 (shell-command "setxkbmap fr")
 
 (shell-command "xset r rate 200 60")

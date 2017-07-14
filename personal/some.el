@@ -1,5 +1,3 @@
-;; (disable-theme 'zenburn)
-
 (setq frame-resize-pixelwise t)
 
 ;; setting dictionary to english
@@ -86,4 +84,17 @@ buffer is not visiting a file."
 
 (global-set-key (kbd "<f5>") 'neotree-toggle)
 
-(darktooth-modeline)
+(blink-cursor-mode 1)
+
+
+(add-hook 'python-mode-hook (lambda ()
+                              (interactive)
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
+
+;; opens my read later org file.
+(defun toread ()
+  (interactive)
+  (find-file "~/readlater.org"))
+
+(global-set-key (kbd "C-h r") 'toread)
